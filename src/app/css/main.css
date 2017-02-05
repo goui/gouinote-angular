@@ -1,0 +1,31 @@
+/* NAVBAR */
+nav {
+    background-color: green;
+}
+nav .brand-logo {
+    margin-left: 10px;
+    color: white;
+}
+nav .brand-logo:hover {
+    color: #ff9800;
+}
+nav i,
+nav [class^="mdi-"],
+nav [class*="mdi-"],
+nav i.material-icons {
+    font-size: 30px;
+}
+
+/* STICKY FOOTER */
+body {
+     display: flex;
+     min-height: 100vh;
+     flex-direction: column;
+ }
+ main {
+     flex: 1 0 auto;
+     background-color: #4CAF50;
+ }
+ footer.page-footer {
+     background-color: green;
+ }

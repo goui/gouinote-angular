@@ -1,0 +1,38 @@
+.card-container {
+    padding: 0 10px 0 10px;
+    min-width: 200px;
+}
+.card {
+    height: 200px;
+}
+.card-content:hover {
+    background-color: orange;
+    cursor: pointer;
+}
+.card-content {
+    height: 150px;
+}
+.card-content p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-height: 1.5em;        /* fallback */
+    max-height: 4.5em; 
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+    text-transform: uppercase;
+    color: white;
+}
+.card .card-action {
+    background-color: orange;
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+}
+.card-action-date {
+    position: absolute;
+    right: 0;
+}

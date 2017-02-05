@@ -1,0 +1,14 @@
+/* CONTENT */
+.container {
+    margin-top: 20px;
+}
+.flow-text {
+    padding: 10px;
+}
+.btn-floating {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 38px;
+    background-color: #ff9800;
+}

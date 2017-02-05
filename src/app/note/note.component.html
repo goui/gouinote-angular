@@ -1,0 +1,11 @@
+<div class="col s3 card-container">
+  <div class="card white darken-1">
+    <div class="card-content black-text">
+      <p>{{ note.content }}</p>
+    </div>
+    <div class="card-action">
+      <a class="card-action-nickname">{{ note.nickname}}</a>
+      <a class="card-action-date">{{ note.date | date: 'MM/dd - hh:mm'}}</a>
+    </div>
+  </div>
+</div>

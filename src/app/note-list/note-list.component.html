@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <app-note *ngFor="let note of noteList" [note]="note"></app-note>
+      <p class="flow-text white-text" *ngIf="noteList === undefined || noteList.length === 0">There are no notes yet</p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isAddingAuthorized" class="fixed-action-btn">
+  <a class="btn btn-floating btn-large waves-effect waves-light orange" (click)="onClick()">
+    <i class="large material-icons">mode_edit</i>
+  </a>
+</div>
+
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>

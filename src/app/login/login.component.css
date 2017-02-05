@@ -1,0 +1,16 @@
+/* CONTENT */
+.btn,
+.btn-large {
+  background-color: #4caf50;
+}
+.btn:hover,
+.btn-large:hover {
+  background-color: #2e7d32;
+  color: #ff9800;
+}
+.card-panel {
+  margin-top: 40px;
+  padding: 10px 20px 10px 20px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+}
