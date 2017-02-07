@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NetworkService } from '../service/network-service';
+import { ModelService } from '../service/model-service';
 import { Router } from '@angular/router';
 import { ExceptionHandler } from '../exception/exception';
+import { User } from '../model/user';
 
 @Component({
   selector: 'app-home',
@@ -13,8 +15,9 @@ export class HomeComponent implements OnInit {
   username: string;
   password: string;
   exceptionHandler = new ExceptionHandler();
+  user: User;
 
-  constructor(private service: NetworkService, private router: Router) { }
+  constructor(private networkService: NetworkService, private modelService: ModelService, private router: Router) { }
 
   ngOnInit() { }
 
@@ -29,9 +32,9 @@ export class HomeComponent implements OnInit {
   }
 
   signIn() {
-    this.service.signIn(this.username, this.password).subscribe(
+    this.networkService.signIn(this.username, this.password).subscribe(
       next => {
-        // TODO
+        this.user = next;
       },
       error => {
         const message = this.exceptionHandler.getMessage(error);
@@ -39,7 +42,8 @@ export class HomeComponent implements OnInit {
         alert(message);
       },
       () => {
-        this.router.navigateByUrl('/note-list');
+        this.modelService.setConnecteduser(this.user);
+        this.router.navigateByUrl('/main');
       }
     );
   }

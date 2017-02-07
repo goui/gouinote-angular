@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, URLSearchParams, Headers } from '@angular/http';
+import { Http, Response, URLSearchParams, Headers, RequestOptions } from '@angular/http';
 import { Note } from '../model/note';
 import { User } from '../model/user';
 
@@ -23,6 +23,11 @@ export class NetworkService {
             .map((res: Response) => res.json());
     }
 
+    getUserList(): Observable<User[]> {
+        return this.http.get(this.BASE_URL + 'user/getAllUsers')
+            .map((res: Response) => res.json());
+    }
+
     createAccount(user): Observable<User> {
         return this.http.post(this.BASE_URL + 'user/createAccount', user, this.headers)
             .map((res: Response) => res.json());
@@ -33,6 +38,14 @@ export class NetworkService {
         data.append('nickname', username);
         data.append('password', password);
         return this.http.post(this.BASE_URL + 'user/signIn', data, this.headers)
+            .map((res: Response) => res.json());
+    }
+
+    addNote(username, noteContent): Observable<Boolean> {
+        const note = new Note();
+        note.content = noteContent;
+        note.nickname = username;
+        return this.http.post(this.BASE_URL + 'user/addNote?nickname=' + username, note, this.headers)
             .map((res: Response) => res.json());
     }
 }

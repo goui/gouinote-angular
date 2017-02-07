@@ -1,0 +1,14 @@
+.main-container {
+    margin-top: 20px;
+}
+.user-list-container {
+    margin-top: 15px;
+}
+.row .col.s3 {
+    margin-right: 0;
+    padding-right: 0;
+}
+.row .col.s9 {
+    margin-left: 0;
+    padding-left: 0;
+}

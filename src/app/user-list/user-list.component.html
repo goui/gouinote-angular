@@ -1,0 +1,13 @@
+<div class="tabs-vertical">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab">
+        <a href="#" (click)="onAllUsersClick()">All users</a>
+      </li>
+      <li class="tab" *ngFor="let user of userList">
+        <app-user [user]="user"></app-user>
+      </li>
+    </ul>
+    <p class="flow-text white-text" *ngIf="userList === undefined || userList.length === 0">There are no users yet</p>
+  </div>
+</div>
